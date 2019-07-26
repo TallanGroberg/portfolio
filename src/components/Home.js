@@ -16,7 +16,10 @@ const Home = () => {
 const HomeStyle = styled.div`
  
 
+@media only screen and (max-width: 800px) {
     text-align: center;
+     
+    }
     
 `;
 
