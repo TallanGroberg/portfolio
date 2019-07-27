@@ -32,7 +32,7 @@ const Navbar = (props) => {
 
 
             <div class="dropdown">
-                         <button class="dropbtn"><hr /> menu</button>
+                         <button class="dropbtn"> Menu</button>
               <div class="dropdown-content">
                 <h4 class="link-style">
                 <hr />
@@ -71,39 +71,60 @@ export default Navbar;
 
 const NavStyle = styled.div `
 
+@keyframes color-changer {
+    0% {
+        color: skyblue;
+    }
+    50% {
+        color: white;
+    }
+    
+    100% {
+        color: skyblue;
+    }
+    
+   
+  }
+
 .nav {
    text-align: right;
    transition: 0.5s;
 }
 
 #home { 
+    color: skyblue;
     text-decoration: none;
     position: right;
     margin-right: 0.5em
 }
 #home:hover {
-    color: skyblue;
-    transition: 0.5s;
+    animation-name: color-changer;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 #about {
+    color: skyblue;
     text-decoration: none;
     text-align: center;
     margin: 0.5em
     
 }
 #about:hover {
-    color: skyblue;
-    transition: 0.5s;
+    animation-name: color-changer;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 
 #projects {
+    color: skyblue;
     text-decoration: none;
     text-align: right;
     margin: 0.5em
 }
 #projects:hover {
-    color: skyblue;
-    transition: 0.5s;
+    animation-name: color-changer;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 
 
@@ -121,97 +142,111 @@ const PhoneStyle = styled.div`
         text-decoration: none;
         position: right;
         margin-right: 0.5em
+        color: skyblue;
         
     }
     #home:hover {
-        transition: 0.5s;
-        color: skyblue;
+        animation-name: color-changer;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
     }
     #about {
         text-decoration: none;
         text-align: center;
         margin: 0.5em
+        color: skyblue;
     }
     #about:hover {
-        color: skyblue;
-        transition: 0.5s;
+        animation-name: color-changer;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
     }
     
     #projects {
         text-decoration: none;
         text-align: right;
         margin: 0.5em
+        color: skyblue;
     }
     #projects:hover {
-        color: skyblue;
-        transition: 0.5s;
-
+        animation-name: color-changer;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        
     }
-
-    .position {
-        text-align: left;
-    }
+    
+    @keyframes color-changer {
+        0% {
+            color: skyblue;
+        }
+        50% {
+            color: white;
+        }
+        
+        100% {
+            color: skyblue;
+        }
+        
+       
+      }
 
 
  .dropdown {
      text-align: center;
      positon: relative;
      background-color: linear-gradient(to-left, rgba(194,210,182,1), rgba(59,112,15,1));
-  }
-  
-  .dropbtn {
-    display: block;
-    width: 100%;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-      
-      
-   
-  }
-  
-  .dropdown-content {
-      display: none;
-      background-color: skyblue;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-      width: 100%;
-      background: linear-gradient(135deg, rgba(194,210,182,1) 0%, rgba(59,112,15,1) 100%);
-      border: solid black 2px;
-      transform: translateY(-3.4em);
-      
     }
-    .dropdown-content h4:hover {
+    
+    .dropbtn {
+        display: block;
+        width: 100%;
         
+        background-color: #4CAF50;
+        color: skyblue;
+        border: solid black 2px
+        font-size: 1.5em;
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    .dropdown-content {
+        display: none;
+        background-color: skyblue;
+        z-index: 1;
+        width: 100%;
+        background: linear-gradient(135deg, rgba(194,210,182,1) 0%, rgba(59,112,15,1) 100%);
+        border: solid black 10px;
+        transform: translateY(-10em);
+
+        
+        
+    }
+    
+    .dropdown-content h4:hover {
+        border: solid black 30px;
         
         background: linear-gradient(135deg, rgba(194,210,182,1) 0%, rgba(59,112,15,1) 100%);
-        transition: 0.5s;
+        transition: 1s;
+        margin-bottom: -13.5%;  
         
     }
     
     .dropdown:hover .dropdown-content {
-        
-     
+        border: solid black 2px
         display: block;
         text-align: center;
         opacity: 1;
-        z-index: 2;
+        z-index: 1;
         transform: translateY(-3em);
-        transition-delay: 1s, 1s, 1s;
-        
-     
+        transition-timing-function: ease;
+        transition: 1s;
     }
   
   .dropdown:hover .dropbtn {
       background-color: #3e8e41;
       overflow:hidden;
-      height:0;
-    
-      
+      height:-5em;
+  
     }
 }
 `;
