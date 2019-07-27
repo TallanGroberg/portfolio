@@ -29,21 +29,15 @@ const Navbar = (props) => {
             return    <PhoneStyle>
 
         <div class="position">
-
-
             <div class="dropdown">
-                         <button class="dropbtn"> Menu</button>
+                     <button class="dropbtn"> Menu</button>
               <div class="dropdown-content">
                 <h4 class="link-style">
                 <hr />
              <Link id="home" to="/" >Home</Link> 
              <hr /> 
-          
-          
               <Link id="about" to="/about">About</Link> 
               <hr /> 
-        
-            
                <Link id="projects" to="/projects">Projects</Link>  <hr /> </h4>
               
               </div>
@@ -76,7 +70,7 @@ const NavStyle = styled.div `
         color: skyblue;
     }
     50% {
-        color: white;
+        color: green;
     }
     
     100% {
@@ -100,7 +94,7 @@ const NavStyle = styled.div `
 #home:hover {
     animation-name: color-changer;
     animation-duration: 2s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
 }
 #about {
     color: skyblue;
@@ -112,7 +106,7 @@ const NavStyle = styled.div `
 #about:hover {
     animation-name: color-changer;
     animation-duration: 2s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
 }
 
 #projects {
@@ -124,7 +118,7 @@ const NavStyle = styled.div `
 #projects:hover {
     animation-name: color-changer;
     animation-duration: 2s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
 }
 
 
@@ -170,21 +164,32 @@ const PhoneStyle = styled.div`
     }
     #projects:hover {
         animation-name: color-changer;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
+      
         
+        
+        /* bounce animation*/
+        
+        animation-duration: 2s; 
+        animation-fill-mode: both; 
+        animation-iteration-count: infinite;
     }
+
+    
+    
+    
     
     @keyframes color-changer {
         0% {
+            transform: translateY(-30px);
             color: skyblue;
         }
         50% {
-            color: white;
+            color: green;
         }
         
         100% {
             color: skyblue;
+            transform: translateY(-15px);
         }
         
        
