@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link, } from 'react-router-dom'
+import Bounce from 'react-reveal/Bounce'
+import Shake from 'react-reveal/Shake';
  
 const Navbar = (props) => {
     const [screenWidth, setScreenWidth] = useState('')
+    const [mouse, setMouse] = useState([])
 
     const getWidth = () => {
         setInterval( function() {setScreenWidth(window.innerWidth)}, 1000)
@@ -13,6 +16,13 @@ const Navbar = (props) => {
         window.addEventListener("getWidth", getWidth() )
     }, [])
 
+     const mousin = () => {
+         setMouse(!mouse)
+     }
+
+    
+
+    // onMouseenter={setMouseenter(true)}
 
     const navbar = () => {
         if (window.innerWidth > 800) {
@@ -20,9 +30,12 @@ const Navbar = (props) => {
 
                       <div className="nav">
                         
-                        <Link id="home" to="/">Home  </Link>|
+                            <Link id="home" to="/">
+                      
+                                Home</Link>|
                         <Link id="about" to='/about'>About  </Link>|
                         <Link id="projects" to='/projects'>Projects</Link>
+                       
                       </div>
                     
                   </NavStyle>
@@ -35,11 +48,24 @@ const Navbar = (props) => {
               <div class="dropdown-content">
                 <h4 class="link-style">
                 <hr />
-             <Link id="home" to="/" >Home</Link> 
+          
+             <Link id="home" to="/" >
+                    <Bounce left opposite cascade collapse >
+                 Home
+                 </Bounce>
+                 </Link> 
              <hr /> 
-              <Link id="about" to="/about">About</Link> 
+              <Link id="about" to="/about"> 
+              <Bounce right opposite cascade collapse >
+                 About
+                 </Bounce>
+                 </Link> 
               <hr /> 
-               <Link id="projects" to="/projects">Projects</Link>  <hr /> </h4>
+               <Link id="projects" to="/projects"> 
+               <Bounce left opposite cascade collapse >
+                 Projects
+                 </Bounce>
+                 </Link>  <hr /> </h4>
               
               </div>
           </div>
@@ -47,16 +73,10 @@ const Navbar = (props) => {
             </NavStyle> 
         }
     }
-  
-
 
     return (
         <>
-       
         {navbar()}
-       
-        
-
         </>
     )
 }
@@ -77,14 +97,14 @@ border: solid black 2px;
 
 @keyframes color-changer {
     0% {
-        color: skyblue;
+        color: black;
     }
     50% {
         color: green;
     }
     
     100% {
-        color: skyblue;
+        color: black;
     }
     
    
@@ -96,7 +116,7 @@ border: solid black 2px;
 }
 
 #home { 
-    color: skyblue;
+    color: black;
     text-decoration: none;
     position: right;
     margin-right: 0.5em
@@ -107,7 +127,7 @@ border: solid black 2px;
     animation-iteration-count: 1;
 }
 #about {
-    color: skyblue;
+    color: black;
     text-decoration: none;
     text-align: center;
     margin: 0.5em
@@ -120,7 +140,7 @@ border: solid black 2px;
 }
 
 #projects {
-    color: skyblue;
+    color: black;
     text-decoration: none;
     text-align: right;
     margin: 0.5em
@@ -144,7 +164,7 @@ padding-top: 0.5em;
         text-decoration: none;
         position: right;
         margin-right: 0.5em
-        color: skyblue;
+        color: black;
         
     }
     #home:hover {
@@ -156,7 +176,7 @@ padding-top: 0.5em;
         text-decoration: none;
         text-align: center;
         margin: 0.5em
-        color: skyblue;
+        color: black;
     }
     #about:hover {
         animation-name: color-changer;
@@ -165,20 +185,18 @@ padding-top: 0.5em;
     }
     
     #projects {
+        color: black;
         text-decoration: none;
-        text-align: right;
+        text-align: center;
         margin: 0.5em
-        color: skyblue;
     }
     #projects:hover {
-        animation-name: color-changer;
+        
       
         
-        
-        /* bounce animation*/
-        
-        animation-duration: 2s; 
-        animation-fill-mode: both; 
+        animation-name: color-changer;
+         animation-duration: 2s;
+         animation-iteration-count: 1;
         animation-iteration-count: infinite;
     }
 
@@ -189,14 +207,14 @@ padding-top: 0.5em;
     @keyframes color-changer {
         0% {
             transform: translateY(-30px);
-            color: skyblue;
+            color: black;
         }
         50% {
             color: green;
         }
         
         100% {
-            color: skyblue;
+            color: black;
             transform: translateY(-15px);
         }
         
@@ -214,8 +232,8 @@ padding-top: 0.5em;
         display: block;
         width: 100%;
         
-        background-color: #4CAF50;
-        color: skyblue;
+        background: linear-gradient(135deg, rgba(194,210,182,1) 0%, rgba(59,112,15,1) 100%);
+        color: black;
         border: solid black 2px
         font-size: 1.5em;
         cursor: pointer;
@@ -224,7 +242,7 @@ padding-top: 0.5em;
     
     .dropdown-content {
         display: none;
-        background-color: skyblue;
+        background-color: black;
         z-index: 1;
         width: 100%;
         background: linear-gradient(135deg, rgba(194,210,182,1) 0%, rgba(59,112,15,1) 100%);

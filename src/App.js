@@ -34,7 +34,7 @@ html {
   width: 100%;
 }
 
-background-image: linear-gradient(#fff, #ccc);
+background-image: linear-gradient(135deg, rgba(194,210,182,1) 0%, rgba(59,112,15,1) 100%);
  
 border: solid black 10px;
 font-family: "Times New Roman", Times, serif;
