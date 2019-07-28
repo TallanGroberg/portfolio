@@ -19,6 +19,7 @@ const Navbar = (props) => {
             return <NavStyle>
 
                       <div className="nav">
+                        
                         <Link id="home" to="/">Home  </Link>|
                         <Link id="about" to='/about'>About  </Link>|
                         <Link id="projects" to='/projects'>Projects</Link>
@@ -26,7 +27,7 @@ const Navbar = (props) => {
                     
                   </NavStyle>
         } else {
-            return    <PhoneStyle>
+            return    <NavStyle>
 
         <div class="position">
             <div class="dropdown">
@@ -43,7 +44,7 @@ const Navbar = (props) => {
               </div>
           </div>
         </div>
-            </PhoneStyle> 
+            </NavStyle> 
         }
     }
   
@@ -51,7 +52,7 @@ const Navbar = (props) => {
 
     return (
         <>
-       { console.log( screenWidth)}
+       
         {navbar()}
        
         
@@ -64,6 +65,15 @@ export default Navbar;
 
 
 const NavStyle = styled.div `
+
+font-size: 20px;
+font-family: "Times New Roman", Times, serif;
+border: solid black 2px;
+
+
+/*test for gradient */
+
+
 
 @keyframes color-changer {
     0% {
@@ -127,9 +137,7 @@ background: linear-gradient(135deg, rgba(194,210,182,1) 0%, rgba(59,112,15,1) 10
 padding-top: 0.5em;
 
 
-`;
 
-const PhoneStyle = styled.div`
 @media only screen and (max-width: 800px) {
 
     #home { 

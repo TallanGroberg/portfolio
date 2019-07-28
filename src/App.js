@@ -28,16 +28,24 @@ import Projects from './components/Projects'
 }
 
 const AppStyle = styled.div`
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+background-image: linear-gradient(#fff, #ccc);
  
 border: solid black 10px;
-display: flex
+font-family: "Times New Roman", Times, serif;
 
-@media only screen and (max-width: 800px) {
-  body {
-    background-color: lightblue;
-  }
-  text-align: center
-}
+
+padding: 1em;
+
+
+
+
+
   
 `;
 
