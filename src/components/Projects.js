@@ -129,10 +129,22 @@ const ProjectStyle = styled.div`
         text-align: center;
     }
 
+    
+
 }
 
 
-
+button  {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(59,112,15,1) 0%, rgba(194,210,182,1) 100%);
+    color: black;
+    border: solid black 1px;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: none;
+}
 
 
 

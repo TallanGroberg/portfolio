@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link, } from 'react-router-dom'
 import Bounce from 'react-reveal/Bounce'
 import Shake from 'react-reveal/Shake';
+import Zoom from 'react-reveal/Zoom'
  
 const Navbar = (props) => {
     const [screenWidth, setScreenWidth] = useState('')
@@ -29,6 +30,7 @@ const Navbar = (props) => {
             return <NavStyle>
 
                       <div className="nav">
+                          
                         
                             <Link id="home" to="/">
                       
@@ -47,25 +49,43 @@ const Navbar = (props) => {
                      <button class="dropbtn"> Menu</button>
               <div class="dropdown-content">
                 <h4 class="link-style">
-                <hr />
+                
           
              <Link id="home" to="/" >
                     <Bounce left opposite cascade collapse >
                  Home
                  </Bounce>
                  </Link> 
-             <hr /> 
+                 <Zoom right cascade collapse>
+                <hr />
+            </Zoom>
+            <Zoom left cascade collapse>
+                <hr />
+                
+                </Zoom>
               <Link id="about" to="/about"> 
               <Bounce right opposite cascade collapse >
                  About
                  </Bounce>
                  </Link> 
-              <hr /> 
+                 <Zoom right cascade collapse>
+                <hr />
+            </Zoom>
+            <Zoom left cascade collapse>
+                <hr />
+                
+                </Zoom>
                <Link id="projects" to="/projects"> 
                <Bounce left opposite cascade collapse >
                  Projects
                  </Bounce>
-                 </Link>  <hr /> </h4>
+                 </Link>   <Zoom right cascade collapse>
+                <hr />
+            </Zoom>
+            <Zoom left cascade collapse>
+                <hr />
+                
+                </Zoom> </h4>
               
               </div>
           </div>
