@@ -52,6 +52,9 @@ const Navbar = (props) => {
                 
           
              <Link id="home" to="/" >
+                 <br />
+                 <br />
+                 <br />
                     <Bounce left opposite cascade collapse >
                  Home
                  </Bounce>
