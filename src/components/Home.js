@@ -97,8 +97,8 @@ const Home = () => {
 
                     :
 
-<Tilt className="Tilt" options={{ max : 25 }} style={{ height: 700, width: 700 }} >
-                     <div onClick={ () => setSide(!side)} className="Tilt-inner"> <Card inverted id="cover">
+<Tilt className="Tilt" options={{ max : 25 }} style={{ height: 750, width: 750 }} >
+                     <div onClick={ () => setSide(!side)} className="Tilt-inner"> <Card id="cover">
                          <Card.Header><h1>Thumbs and Thoroughfares</h1></Card.Header>
                          
                              <hr  />
@@ -144,21 +144,22 @@ const HomeStyle = styled.div`
     @media only screen and (max-width: 800px) {
         text-align: center;
         img {
-            text-align: center;
+            
            
         }
-                .Tilt {
-                    margin-left: -25%;
-                }
+           #cover {
+               position: auto;
+               display: block;
+           }     
     }
     img {
-        height: 15%;
-        width: 15%;
         
     }
-
+    
     #selfy {
         margin-top: 10em;
+        height: 15%;
+        width: 15%;
     }
 
     #header {
@@ -191,7 +192,7 @@ const HomeStyle = styled.div`
         height: 80%;
         width: 50%;
         margin-top: 5%
-        margin-left: 45%;
+       margin-right: 20%
         box-shadow: 22px 20px 12px 0px rgba(0,0,0,0.75);
         border: solid black 5px;
         border-style: outset;
