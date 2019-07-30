@@ -1,33 +1,37 @@
 import React, {useState, } from 'react'
 import styled from 'styled-components'
 import { Card, } from 'semantic-ui-react'
+import { Link, } from "react-router-dom"
 import Zoom from 'react-reveal/Zoom';
 import Roll from 'react-reveal/Roll';
 import Slide from 'react-reveal/Slide'
+import Fade from 'react-reveal/Fade'
+import Shake from 'react-reveal/Shake';
 import LightSpeed from 'react-reveal/LightSpeed'
 import Tilt from 'react-tilt'
 import logo from  './IMG_2284.jpg'
 import book from './IMG_3610.jpg'
+import beaker from './devpoint-labs.jpg'
+import gitHub from './github.png'
+import colorgithub from './colorgithub.png'
 
 
 const Home = () => {
     const [side, setSide] = useState(false)
-
-    
-    
-
-    
+    const [shake, setShake] = useState(false)
 
 
-
+    const shakeImage = () => {
+        setShake(true)
+    }
     return (
         <>
             <HomeStyle>
             <Roll right cascade collapse >
                 <h1 id="header">Hello</h1>
             </Roll>
-            <Slide right >
-                 <img src={logo} id="selfy"align="left" />
+            <Slide right>
+                 <img src={logo} id="selfy" align="left" />
             </Slide>
              
 
@@ -48,6 +52,10 @@ const Home = () => {
                 <p>I'm a software engineer</p>
             </Slide>
                     <span id="break"></span>
+                    <h4>I'm from Clearfield, Utah. I was enlisted in the United States Navy for 4 Years. I went to 
+                        Salt Lake Community Collages to study computer science. Graduated from the University of Utah 
+                        Professional Education Certification in full stack web developement. 
+                    </h4>
                     <br />
                     <br />
                     <br />
@@ -64,22 +72,7 @@ const Home = () => {
                     <br />
                     <br />
                     <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    
 
                 <Zoom>
                    <hr  />
@@ -131,8 +124,124 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
                 </Tilt>
                         }
 
-                
-                {console.log(side)}
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                <Zoom>
+                   <hr  />
+                </Zoom>
+
+
+
+        <Roll bottom cascade>
+               <h1>I also host a Podcast. </h1>
+        </Roll>
+
+               <Fade right>
+                    <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/_rtrdj1uC8Q"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media;
+                    gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+               </Fade>
+
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <Link to='/projects'>
+                         <h1 id="projects">See a list of my software engineering 
+                         projects I made as a student at Devpoint Labs.</h1> 
+                    </Link>
+                        
+                         <a id="devpoint" href="https://www.devpointlabs.com/" target="_blank">
+                    <Slide right>
+                        <div id="or">
+                        <img src={beaker} id="beaker" align="left" /><h1 id="r">Or..</h1>
+                        </div>
+                            
+                    </Slide>
+                             <h1>Devpoint labs Visit their website</h1></a>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                  
+                        <Zoom>
+                             <hr  />
+                        </Zoom>
+
+                    <a href="https://query-app.herokuapp.com/"><h2>see the learning management system I designed</h2></a>
+                    <h2>you could visit my github</h2>
+
+                    
+
+                    <a id="color" href="https://github.com/cicadapurp" 
+                    onMouseEnter={shakeImage}>  
+                    {shake === false ?  
+                    <img id="devpoint" src={gitHub} /> 
+                    : 
+                    <Shake><img id='color' src={gitHub} /></Shake> }
+                    </a>
+                    
+                    
+
+
               
             </HomeStyle>
            
@@ -143,23 +252,41 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
 const HomeStyle = styled.div`
     @media only screen and (max-width: 800px) {
         text-align: center;
-        img {
-            
-           
+        iframe {
+            width: 80% 
+            height: 80% 
         }
            #cover {
-               position: auto;
+               position: right;
                display: block;
-           }     
+           }  
+
     }
-    img {
-        
+
+    a {
+        color: black;
+        text-decoration: none;
     }
+    a:hover {
+        color: lightgray;
+    }
+
+    #projects {
+        color: black;
+        text-decoration: none;
+       
+
+    }
+    #projects:hover {
+        color: lightgray;
+    }
+   
     
     #selfy {
         margin-top: 10em;
         height: 15%;
         width: 15%;
+        padding-right: 1em;
     }
 
     #header {
@@ -167,8 +294,9 @@ const HomeStyle = styled.div`
     }
 
     #introduce {
+        position: absolute;
         text-align: center
-        margin-right: 5em;
+      
     }
 
     p {
@@ -191,12 +319,37 @@ const HomeStyle = styled.div`
     #cover {
         height: 80%;
         width: 50%;
-        margin-top: 5%
-       margin-right: 20%
+       
         box-shadow: 22px 20px 12px 0px rgba(0,0,0,0.75);
         border: solid black 5px;
         border-style: outset;
     }
+
+    #beaker {
+        height: 25%;
+        width: 25%;
+        padding: 1em
+        border-radius: 50%;
+    }
+
+    #devpoint:hover {
+        color: purple;
+    }
+
+    #or {
+       
+    }
+
+    #color {
+        border-radius: 50%;
+        width: 25%
+        height: 25%
+    }
+
+   
+
+    
+  
     
 `;
 
