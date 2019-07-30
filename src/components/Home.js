@@ -50,6 +50,9 @@ const Home = () => {
 
             <Slide right  collapse>
                 <p>I'm a software engineer</p>
+                <br />
+                <br />
+                <br />
             </Slide>
                     <span id="break"></span>
                     <h4>I'm from Clearfield, Utah. I was enlisted in the United States Navy for 4 Years. I went to 
