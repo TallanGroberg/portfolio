@@ -243,9 +243,7 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
                     </a>
                     
                     
-
-
-              
+            
             </HomeStyle>
            
         </>
@@ -263,7 +261,10 @@ const HomeStyle = styled.div`
                position: right;
                display: block;
            }  
-
+           #color {
+               width: 80%;
+               height: 80%;
+           }
     }
 
     a {
@@ -335,6 +336,11 @@ const HomeStyle = styled.div`
         border-radius: 50%;
     }
 
+    #devpoint {
+        width: 25%;
+        height: 25%;
+    }
+
     #devpoint:hover {
         color: purple;
     }
@@ -349,10 +355,7 @@ const HomeStyle = styled.div`
         height: 25%
     }
 
-   
 
-    
-  
     
 `;
 

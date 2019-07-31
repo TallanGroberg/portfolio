@@ -79,7 +79,7 @@ class ConnectedProject extends React.Component {
                          React-Native mobile adaption. 
                      </li>
                      <hr />
-                     <li> <a href="query-app.herokuapp.com" >see how it turned out</a></li>
+                     
 
                 </ul>
                      
@@ -87,7 +87,7 @@ class ConnectedProject extends React.Component {
                       
             </Fade>
 
-            <h1></h1>
+            
         
           </ProjectStyle>
           </>
@@ -111,7 +111,7 @@ const Projects = () => {
             </Zoom>
 
             <Rotate top left opposite cascade collapse >
-            <h2>Query-app</h2> 
+            <h2><a id='link' href="https://query-app.herokuapp.com/">Query-app: See how it turned out</a></h2> 
             </Rotate>
            
            
@@ -128,6 +128,7 @@ const ProjectStyle = styled.div`
         color: green;
         text-align: center;
     }
+
 
     
 
@@ -146,6 +147,13 @@ button  {
     box-shadow: none;
 }
 
+#link {
+    text-decoration: none;
+    color: black;
+}
+#link:hover {
+    color: green;
+}
 
 
 `;
