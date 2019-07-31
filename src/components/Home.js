@@ -6,6 +6,7 @@ import Zoom from 'react-reveal/Zoom';
 import Roll from 'react-reveal/Roll';
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
+import Spin from 'react-reveal/Spin'
 import Shake from 'react-reveal/Shake';
 import LightSpeed from 'react-reveal/LightSpeed'
 import Tilt from 'react-tilt'
@@ -14,15 +15,21 @@ import book from './IMG_3610.jpg'
 import beaker from './devpoint-labs.jpg'
 import gitHub from './github.png'
 import colorgithub from './colorgithub.png'
-
+import south from './south.png'
+import tv from './tv.png'
 
 const Home = () => {
     const [side, setSide] = useState(false)
     const [shake, setShake] = useState(false)
+    const [spin, setSpin] = useState(false)
 
 
     const shakeImage = () => {
         setShake(true)
+    }
+
+    const spinCompass = () => {
+        setSpin(!spin)
     }
     return (
         <>
@@ -75,6 +82,19 @@ const Home = () => {
                     <br />
                     <br />
                     <br />
+                    <Zoom>
+                   <hr  />
+                </Zoom>
+                    { spin === true ? <Spin>
+                        <img  onMouseEnter={spinCompass} 
+                        src={south} 
+                        id='compass'
+                         align="center" />
+                        </Spin> : <img onMouseLeave={spinCompass} onMouseEnter={spinCompass} 
+                        src={south} 
+                        id='compass'
+                         align="center" /> }
+
                     
 
                 <Zoom>
@@ -127,14 +147,30 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
                 </Tilt>
                         }
 
-
+                        
+                    <br />
+                    <br />
+                    <br />
+                   
                     <br />
                     <br />
                     <br />
                     <br />
-                    <br />
-                    <br />
-                    <br />
+                    <Zoom>
+                        <hr  />
+                    </Zoom>
+                    { spin === true ? <Spin>
+                        <img  onMouseEnter={spinCompass} 
+                        src={south} 
+                        id='compass'
+                         align="center" />
+                        </Spin> : <img onMouseLeave={spinCompass} onMouseEnter={spinCompass} 
+                        src={south} 
+                        id='compass'
+                         align="center" /> }
+                           <Zoom>
+                             <hr  />
+                          </Zoom>
                     <br />
                     <br />
                     <br />
@@ -156,11 +192,20 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
 
 
         <Roll bottom cascade>
-               <h1>I also host a Podcast. </h1>
+               <h1> Please like and subscribe to my Podcast. </h1>
         </Roll>
+        <br />
+                    <br />
+                    <br />
+                    <br />
+                   
+                <Fade right>
+                <img id="tv" src={tv} />
+                </Fade>
+
 
                <Fade right>
-                    <iframe width="560" height="315" 
+                    <iframe width="515" height="360" 
                     src="https://www.youtube.com/embed/_rtrdj1uC8Q"
                     frameborder="0" allow="accelerometer; autoplay; encrypted-media;
                     gyroscope; picture-in-picture"
@@ -184,6 +229,21 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
                     <br />
                     <br />
                     <br />
+                    <Zoom>
+                        <hr  />
+                    </Zoom>
+                    { spin === true ? <Spin>
+                        <img  onMouseEnter={spinCompass} 
+                        src={south} 
+                        id='compass'
+                         align="center" />
+                        </Spin> : <img onMouseLeave={spinCompass} onMouseEnter={spinCompass} 
+                        src={south} 
+                        id='compass'
+                         align="center" /> }
+                    <Zoom>
+                        <hr  />
+                    </Zoom>
                     <br />
                     <br />
                     <br />
@@ -192,8 +252,6 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
                     <br />
                     <br />
                     <br />
-
-
                     <br />
                     <br />
                     <br />
@@ -230,16 +288,24 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
                         </Zoom>
 
                     <a href="https://query-app.herokuapp.com/"><h2>see the learning management system I designed</h2></a>
-                    <h2>you could visit my github</h2>
-
                     
 
+                    <Zoom>
+                             <hr  />
+                        </Zoom>
+
                     <a id="color" href="https://github.com/cicadapurp" 
-                    onMouseEnter={shakeImage}>  
+                    onMouseEnter={shakeImage}> 
+                    <h2>and you could visit my github</h2>
                     {shake === false ?  
                     <img id="devpoint" src={gitHub} /> 
                     : 
-                    <Shake><img id='color' src={gitHub} /></Shake> }
+                        <Tilt options={{ max : 25 }} style={{ height: 750, width: 750 }} >
+                    <Shake>
+                        <img id='color' src={gitHub} />
+                        </Shake> 
+                        </Tilt>
+                    }
                     </a>
                     
                     
@@ -255,15 +321,18 @@ const HomeStyle = styled.div`
         text-align: center;
         iframe {
             width: 80% 
-            height: 80% 
+            height: 110% 
         }
            #cover {
                position: right;
                display: block;
            }  
            #color {
-               width: 80%;
-               height: 80%;
+            width: 25%;
+            height: 25%;
+               display: inline-block;
+             margin-right: 40%;
+             
            }
     }
 
@@ -351,8 +420,29 @@ const HomeStyle = styled.div`
 
     #color {
         border-radius: 50%;
+        position: relative;
         width: 25%
         height: 25%
+    }
+
+    #compass {
+        width: 10%;
+        height: 10%;
+        display: block;
+        margin-left: 45%;
+    }
+
+    #tv {
+        position: relative;
+        text-align: center;
+        top: -45px;
+		left: 0;
+    }
+    iframe {
+        boarder-radius: 5%;
+        position: absolute;
+		margin-top: 5px;
+		left: 80px;
     }
 
 
