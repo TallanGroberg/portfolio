@@ -300,11 +300,11 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
                     {shake === false ?  
                     <img id="devpoint" src={gitHub} /> 
                     : 
-                        <Tilt options={{ max : 25 }} style={{ height: 750, width: 750 }} >
+                       
                     <Shake>
                         <img id='color' src={gitHub} />
                         </Shake> 
-                        </Tilt>
+                        
                     }
                     </a>
                     
@@ -320,20 +320,25 @@ const HomeStyle = styled.div`
     @media only screen and (max-width: 800px) {
         text-align: center;
         iframe {
-            width: 80% 
-            height: 110% 
+            position: absolute;
+            
+          
+            width: 50% 
+            height: 21% 
+            margin-left: -1%;
+        }
+        #tv {
+            width: 90%;
+            height: 80%;
+            position: relative;
+            margin-top: 8%;
+            
         }
            #cover {
                position: right;
                display: block;
            }  
-           #color {
-            width: 25%;
-            height: 25%;
-               display: inline-block;
-             margin-right: 40%;
-             
-           }
+          
     }
 
     a {
