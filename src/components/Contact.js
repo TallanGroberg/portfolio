@@ -7,15 +7,24 @@ import Zoom from 'react-reveal/Zoom'
 
 
 const Contact = () => {
-    const [name, setName] = useState('')
     const [toggle, setToggle] = useState(false)
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [comment, setComment] = useState('')
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        alert("test")
+       e.preventDefault()
+        axios.post(`/api/people`, {  name, email, comment, })
+        .then( res => {
+            console.log(res)
+        })
+        .catch( res => {
+            console.log(res)
+        })
+    }
 
+   const handleChange = (e) => {
+        setName(e.target.value)
     }
     
     const handleAlert = () => {
@@ -26,54 +35,15 @@ const Contact = () => {
         <>
         <ContactStyle>
                 <Zoom><hr /></Zoom>
-            <h1>Contact Me Directly</h1>
+            <h1 id="contact" onClick={()=> setToggle(!toggle)}>send me an email</h1>
         </ContactStyle>               
-            <Button inverted textAlign="center" text-color="green" color='black' onClick={()=> setToggle(!toggle)}><p>Contact Form</p></Button>
-                <Zoom><hr /></Zoom>
-                {handleAlert}
-        
-
         <Fade top opposite when={ toggle === true}> 
-            <h1>Note: this will only send your info directly to my email. This is NOT the sign up for an automated mailing list.</h1>
-        <Form>
-        <Zoom><hr /></Zoom>
-        
-            <Form.Input 
-                label="Name"
-                required="true"
-                placeholder="Name"
-                value={name}
-                
-                onChange={(e) => setName(e.target.value)}
-                />
-                 <Zoom><hr /></Zoom>
-        
-             <Form.Input 
-                label="Email"
-                required="true"
-                placeholder="Email"
-                value={email}
-                
-                onChange={(e) => setEmail(e.target.value)}
-                />
-                 <Zoom><hr /></Zoom>
-        
-                 <Form.TextArea 
-                 type="text-field"
-                label="Comments"
-                placeholder="Comments"
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-                />
-                 <Zoom><hr /></Zoom>
-        
-
-                <Form.Button inverted onClick={()=> setToggle(!toggle)} onSubmit={handleSubmit}>Submit</Form.Button>
-        </Form>
-
-        
-
+          <h1>Tallan.taven@gmail.com</h1>
         </Fade>
+           
+         
+        
+
 
        
 
@@ -88,7 +58,9 @@ const Contact = () => {
 const ContactStyle = styled.div`
 
 color: white;
-
+#contact:hover {
+    color: black;
+}
 `;
 
 
