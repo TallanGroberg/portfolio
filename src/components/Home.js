@@ -2,6 +2,7 @@ import React, {useState, } from 'react'
 import styled from 'styled-components'
 import { Card, } from 'semantic-ui-react'
 import { Link, } from "react-router-dom"
+import Contact from './Contact'
 import Zoom from 'react-reveal/Zoom';
 import Roll from 'react-reveal/Roll';
 import Slide from 'react-reveal/Slide'
@@ -34,6 +35,7 @@ const Home = () => {
     return (
         <>
             <HomeStyle>
+                
             <Roll right cascade collapse >
                 <h1 id="header">Hello</h1>
             </Roll>
@@ -309,7 +311,7 @@ href="https://www.amazon.com/Thumbs-Thoroughfares-Talon-Scott-ebook/dp/B07T8DXY3
                     </a>
                     
                     
-            
+                    <Contact />
             </HomeStyle>
            
         </>
