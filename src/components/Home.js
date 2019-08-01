@@ -24,7 +24,7 @@ const Home = () => {
     const [shake, setShake] = useState(false)
     const [spin, setSpin] = useState(false)
 
-
+    
     const shakeImage = () => {
         setShake(true)
     }

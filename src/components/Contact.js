@@ -33,24 +33,14 @@ const Contact = () => {
 
     return (
         <>
-        <ContactStyle>
-                <Zoom><hr /></Zoom>
-            <h1 id="contact" onClick={()=> setToggle(!toggle)}>send me an email</h1>
-        </ContactStyle>               
-        <Fade top opposite when={ toggle === true}> 
-          <h1>Tallan.taven@gmail.com</h1>
-        </Fade>
+            <ContactStyle>
+                    <Zoom><hr /></Zoom>
+                <h1 id="contact" onClick={()=> setToggle(!toggle)}>send me an email</h1>
+            </ContactStyle>               
+            <Fade top opposite when={ toggle === true}> 
+                <h1>Tallan.taven@gmail.com</h1>
+            </Fade>
            
-         
-        
-
-
-       
-
-        
-        
-        
-        
         </>
     )
 }
